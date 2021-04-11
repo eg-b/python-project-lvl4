@@ -1,4 +1,4 @@
-git asgiref==3.3.1; python_version >= "3.6" \
+asgiref==3.3.1; python_version >= "3.6" \
     --hash=sha256:5ee950735509d04eb673bd7f7120f8fa1c9e2df495394992c73234d526907e17 \
     --hash=sha256:7162a3cb30ab0609f1a4c95938fd73e8604f63bdba516a7f7d64b83ff09478f0
 dj-database-url==0.5.0 \
