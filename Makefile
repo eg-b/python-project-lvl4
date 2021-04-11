@@ -2,7 +2,7 @@ run:
 	poetry run python ./task_manager/manage.py runserver
 
 run_gunicorn:
-	export DJANGO_SETTINGS_MODULE=hello_django.settings
+	export DJANGO_SETTINGS_MODULE=task_manager.settings
 	poetry run gunicorn hello_django.wsgi
 
 heroku_push:
