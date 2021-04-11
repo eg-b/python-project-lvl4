@@ -5,6 +5,8 @@ run_gunicorn:
 	export DJANGO_SETTINGS_MODULE=hello_django.settings
 	poetry run gunicorn hello_django.wsgi
 
+heroku_push:
+	git push heroku main
 
 configure:
 	poetry install
