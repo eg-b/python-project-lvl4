@@ -8,6 +8,9 @@ run_gunicorn:
 heroku_push:
 	git push heroku main
 
+scale:
+	heroku ps:scale web=1
+
 configure:
 	poetry install
 
