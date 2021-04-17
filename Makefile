@@ -1,5 +1,5 @@
 run:
-	poetry run python ./task_manager/manage.py runserver
+	poetry run python ./manage.py runserver
 
 run_gunicorn:
 	export DJANGO_SETTINGS_MODULE=task_manager.settings
