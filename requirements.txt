@@ -1,15 +1,18 @@
-asgiref @ file:///home/eg/.cache/pypoetry/artifacts/0b/21/50/2bcd78e63f8be828de46e1a221f490604bd99b70edc7d49bfea5f2ff5b/asgiref-3.3.1-py3-none-any.whl
-beautifulsoup4 @ file:///home/eg/.cache/pypoetry/artifacts/e0/38/d7/f9b232f345b5354d13487afd553ef917480088fda47bb62e056a3a7924/beautifulsoup4-4.9.3-py3-none-any.whl
-bootstrap4 @ file:///home/eg/.cache/pypoetry/artifacts/8e/db/19/7fd959ee243b04aea0ee74b45777c8a3d20ab8a68f0653927b7c2cb786/bootstrap4-0.1.0.tar.gz
-dj-database-url @ file:///home/eg/.cache/pypoetry/artifacts/86/81/2f/8da8bcd6372e6797609dd5d6191fd427ed8aeb7bd818cfbf8c2d7b4cde/dj_database_url-0.5.0-py2.py3-none-any.whl
-Django @ file:///home/eg/.cache/pypoetry/artifacts/7a/41/f7/c037d411b9f985a3a6a97136b7916a1b98d7522b0b1563152c85d0b647/Django-3.1.7-py3-none-any.whl
-django-bootstrap4 @ file:///home/eg/.cache/pypoetry/artifacts/ef/73/86/c3d0a024c65a438a73935f10c1912f9a8308116a47acbf5c120dcd8d62/django_bootstrap4-3.0.0-py3-none-any.whl
-flake8 @ file:///home/eg/.cache/pypoetry/artifacts/35/12/2a/5f66e6552c711cbd5782ca3a5c7d0884e2ee44cd1030b0af790b83f170/flake8-3.9.0-py2.py3-none-any.whl
-gunicorn @ file:///home/eg/.cache/pypoetry/artifacts/08/18/bf/8801365b17c036729a5223811d55eb2d5e9811794f6c4b6d078a44966f/gunicorn-20.1.0.tar.gz
-mccabe @ file:///home/eg/.cache/pypoetry/artifacts/37/6e/69/4a33a4d6c80c775b1ee205face2c6e07b762c8602bb0f0d236ebe790c5/mccabe-0.6.1-py2.py3-none-any.whl
-pycodestyle @ file:///home/eg/.cache/pypoetry/artifacts/ea/27/4a/ce8e18f033aae28e47dc2895901dce76e10e7c9efc48bcd95ab4443c47/pycodestyle-2.7.0-py2.py3-none-any.whl
-pyflakes @ file:///home/eg/.cache/pypoetry/artifacts/b0/73/41/34d4d02987e40ffa6ee0292425303a75b4178476bf134ceaf0585a9faf/pyflakes-2.3.1-py2.py3-none-any.whl
-python-dotenv @ file:///home/eg/.cache/pypoetry/artifacts/48/12/29/91274f0bde950d7041ba19786a4a41f20593c06f31eb1c59db1a64e849/python_dotenv-0.17.0-py2.py3-none-any.whl
-pytz @ file:///home/eg/.cache/pypoetry/artifacts/19/50/c9/f8bffb0360052b3c85b912bc4172f824bc2571e24002806fb3a428302e/pytz-2021.1-py2.py3-none-any.whl
-soupsieve @ file:///home/eg/.cache/pypoetry/artifacts/b8/a8/7f/9e40f555a1f9d45c0bee1c0968b363dd999d2beb5b111eec78c11e9203/soupsieve-2.2.1-py3-none-any.whl
-sqlparse @ file:///home/eg/.cache/pypoetry/artifacts/f6/9e/b8/b33d7ab31a08d0f94b260c990d807e12f38e0ffb105a4c2ca9ad9a6434/sqlparse-0.4.1-py3-none-any.whl
+asgiref==3.3.1
+beautifulsoup4==4.9.3
+bootstrap4==0.1.0
+dj-database-url==0.5.0
+Django==3.1.7
+django-bootstrap4==3.0.0
+flake8==3.9.0
+gunicorn==20.1.0
+mccabe==0.6.1
+pip==21.1
+pycodestyle==2.7.0
+pyflakes==2.3.1
+python-dotenv==0.17.0
+pytz==2021.1
+setuptools==54.0.0
+soupsieve==2.2.1
+sqlparse==0.4.1
+wheel==0.36.2
