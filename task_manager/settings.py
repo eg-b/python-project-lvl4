@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 import os
 from pathlib import Path
 from dotenv import load_dotenv
+from django.utils.translation import ugettext_lazy as _
 
 
 load_dotenv()
@@ -30,7 +31,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG')
 
-ALLOWED_HOSTS = ['eg-b-task-manager.herokuapp.com']
+ALLOWED_HOSTS = ['eg-b-task-manager.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -42,7 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'task_manager'
+    'task_manager',
+    'bootstrap4'
 ]
 
 MIDDLEWARE = [
@@ -53,6 +55,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
 ]
 
 ROOT_URLCONF = 'task_manager.urls'
@@ -118,6 +121,11 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+LANGUAGES = [
+    ('en-us', _('English')),
+    ('ru', _('Russian'))
+]
 
 
 # Static files (CSS, JavaScript, Images)
