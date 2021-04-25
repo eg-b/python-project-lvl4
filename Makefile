@@ -30,3 +30,6 @@ test:
 
 publish:
 	poetry publish -r testpypi
+
+translate:
+	cd task_manager; django-admin makemessages -l ru; django-admin compilemessages
