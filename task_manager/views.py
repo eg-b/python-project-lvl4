@@ -1,8 +1,10 @@
 from django.shortcuts import render, redirect
 from django.views.generic.base import TemplateView
+from django.views.generic import ListView
 from django.http import HttpResponse
 from django.views import View
 from django.utils.translation import gettext as _
+from django.contrib.auth.models import User
 
 
 class IndexView(View):
@@ -19,3 +21,9 @@ class HomePage(TemplateView):
         context = super().get_context_data(**kwargs)
         # context['welcome'] = _('Hello from Hexlet!')
         return context
+
+
+class UserList(ListView):
+
+    template_name = "user_list.html"
+    model = User
