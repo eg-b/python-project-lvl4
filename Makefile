@@ -33,3 +33,6 @@ publish:
 
 translate:
 	cd task_manager; django-admin makemessages -l ru; django-admin compilemessages
+
+migrate:
+	poetry run python manage.py migrate
