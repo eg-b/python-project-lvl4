@@ -19,7 +19,9 @@ from django.urls import path
 from task_manager import views
 
 urlpatterns = [
-    path('', views.HomePage.as_view()),
+    path('', views.HomePage.as_view(), name='home-page'),
     path('admin/', admin.site.urls),
-    path('users/', views.UserList.as_view()),
+    path('users/', views.UserList.as_view(), name='user-list'),
+    path('users/create/', views.CreateUser.as_view(), name='user-create'),
+    path('/users/<int:pk>/update/', views.UpdateUser.as_view(), name='user-update')
 ]
