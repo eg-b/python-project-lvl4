@@ -23,5 +23,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('users/', views.UserList.as_view(), name='user-list'),
     path('users/create/', views.CreateUser.as_view(), name='user-create'),
-    path('/users/<int:pk>/update/', views.UpdateUser.as_view(), name='user-update')
+    path('users/<int:pk>/update/', views.UpdateUser.as_view(), name='user-update')
 ]

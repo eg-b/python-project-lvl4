@@ -36,9 +36,6 @@ class CreateUser(CreateView):
     model = User
     fields = ['username', 'first_name', 'last_name', 'password', 'email']
 
-    def get_absolute_url(self):
-        return "/"
-
     def get_success_url(self):
         return "/"
 
@@ -48,3 +45,6 @@ class UpdateUser(UpdateView):
     template_name = "user_update.html"
     model = User
     fields = ['username', 'first_name', 'last_name', 'password', 'email']
+
+    def get_success_url(self):
+        return "/"

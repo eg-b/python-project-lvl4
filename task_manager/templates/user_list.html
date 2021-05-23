@@ -1,16 +1,27 @@
 {% extends "base.html" %}
 {% load i18n %}
 {% block content %}
-<div class="mx-auto" style="width: 200px;">
-  <h3>{% trans "User List" %}</h3>
-    {% if object_list %}
-    <ol>
-        {% for user in object_list %}
-            <li>{{ user.username }}</li>
-        {% endfor %}
-    </ol>
-    {% else %}
-      <p>There are no users.</p>
-    {% endif %}
+<div class="container">
+  <h3 align=center>{% trans "User List" %}</h3>
+    <div class="row">
+      <div class="col-12">
+        {% if object_list %}
+          <table cellspacing="3" cellpadding="3" align="center" border="1" width="50%">
+            <tr>
+              <td align=Center>{% trans 'User ID' %}</td>
+              <td align=Center>{% trans 'Username' %}</td>
+            </tr>
+              {% for user in object_list %}
+                <tr>
+                  <td align=Center>{{ user.id }}</td>
+                  <td align=Center><a class="nav-link" href="/users/{{ user.id }}/update/">{{ user.username }}</a></td>
+                </tr>
+              {% endfor %}
+          </table>
+        {% else %}
+          <p>{% trans 'There are no users.' %}</p>
+        {% endif %}
+      </div>
+    </div>
 </div>
 {% endblock %}

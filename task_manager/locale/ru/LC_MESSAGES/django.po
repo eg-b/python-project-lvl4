@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-16 22:22+0300\n"
+"POT-Creation-Date: 2021-05-23 23:31+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -52,7 +52,7 @@ msgstr "Привет!"
 msgid "User creating"
 msgstr "Создание пользователя"
 
-#: templates/user_create.html:12
+#: templates/user_create.html:17
 msgid "Save"
 msgstr "Сохранить"
 
@@ -61,6 +61,22 @@ msgstr "Сохранить"
 #| msgid "Users"
 msgid "User List"
 msgstr "Пользователи"
+
+#: templates/user_list.html:11
+#, fuzzy
+#| msgid "Users"
+msgid "User ID"
+msgstr "ID пользователя"
+
+#: templates/user_list.html:12
+#, fuzzy
+#| msgid "Users"
+msgid "Username"
+msgstr "Пользователи"
+
+#: templates/user_list.html:22
+msgid "There are no users."
+msgstr "Нет пользователей"
 
 #: templates/user_update.html:12
 msgid "Save changes"
