@@ -7,7 +7,7 @@
         <div class="mx-auto" style="width: 200px;">
           <h3>User profile</h3>
 
-          <form method="get">{% csrf_token %}
+          <form method="post">{% csrf_token %}
             {{ form.as_p }}
               <input type="submit" value={% trans "Save changes" %}>
           </form>

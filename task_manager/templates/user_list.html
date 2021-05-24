@@ -10,11 +10,14 @@
             <tr>
               <td align=Center>{% trans 'User ID' %}</td>
               <td align=Center>{% trans 'Username' %}</td>
+              <td align=Center>{% trans 'Actions' %}</td>
             </tr>
               {% for user in object_list %}
                 <tr>
                   <td align=Center>{{ user.id }}</td>
-                  <td align=Center><a class="nav-link" href="/users/{{ user.id }}/update/">{{ user.username }}</a></td>
+                  <td align=Center>{{ user.username }}</td>
+                  <td align=Center><a class="nav-link" href="/users/{{ user.id }}/update/">{% trans 'Edit' %}</a>
+                                   <a class="nav-link" href="/users/{{ user.id }}/delete/">{% trans 'Delete' %}</a></td>
                 </tr>
               {% endfor %}
           </table>

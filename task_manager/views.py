@@ -48,3 +48,14 @@ class UpdateUser(UpdateView):
 
     def get_success_url(self):
         return "/"
+
+    # нужно как-то обработать ввод неправильного пароля при апдейте
+
+
+class DeleteUser(DeleteView):
+
+    template_name = "user_delete.html"
+    model = User
+
+    def get_success_url(self):
+        return "/users"
