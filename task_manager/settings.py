@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 import os
 import dj_database_url
+import django_heroku
 from pathlib import Path
 from dotenv import load_dotenv
 from django.utils.translation import ugettext_lazy as _
@@ -85,7 +86,7 @@ WSGI_APPLICATION = 'task_manager.wsgi.application'
 
 
 DATABASES = {}
-DATABASES['default'] = dj_database_url.config(default=os.getenv("DATABASE_URL"), conn_max_age=600)
+DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 
 
 # Password validation
