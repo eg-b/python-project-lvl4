@@ -6,6 +6,28 @@ from django.http import HttpResponse
 from django.views import View
 from django.utils.translation import gettext as _
 from django.contrib.auth.models import User
+from django.contrib.auth.views import LoginView
+from django.views.generic import View
+from django.contrib.auth.forms import UserCreationForm
+from django.urls import reverse_lazy
+import logging
+# class LoginView(View):
+#     def post(self, request):
+#         username = request.POST['username']
+#         password = request.POST['password']
+#         user = authenticate(username=username, password=password)
+
+#         if user is not None:
+#             if user.is_active:
+#                 login(request, user)
+
+#                 return HttpResponseRedirect('/form')
+#             else:
+#                 return HttpResponse("Inactive user.")
+#         else:
+#             return HttpResponseRedirect(settings.LOGIN_URL)
+
+#         return render(request, "index.html")
 
 
 class IndexView(View):
@@ -20,7 +42,6 @@ class HomePage(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        # context['welcome'] = _('Hello from Hexlet!')
         return context
 
 
@@ -30,21 +51,17 @@ class UserList(ListView):
     model = User
 
 
-class CreateUser(CreateView):
-
-    template_name = "user_create.html"
-    model = User
-    fields = ['username', 'first_name', 'last_name', 'password', 'email']
-
-    def get_success_url(self):
-        return "/"
+class SignUpView(CreateView):
+    form_class = UserCreationForm
+    success_url = reverse_lazy('login')
+    template_name = 'registration/signup.html'
 
 
 class UpdateUser(UpdateView):
 
     template_name = "user_update.html"
     model = User
-    fields = ['username', 'first_name', 'last_name', 'password', 'email']
+    fields = ['username', 'first_name', 'last_name', 'email']
 
     def get_success_url(self):
         return "/"
@@ -59,3 +76,15 @@ class DeleteUser(DeleteView):
 
     def get_success_url(self):
         return "/users"
+
+
+class Login(LoginView):
+
+    template_name = 'registration/login.html'
+    redirect_field_name = 'home'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context
+
+
