@@ -1,10 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
-
-<!-- {% if form.errors %}
-<p>Your username and password didn't match. Please try again.</p>
-{% endif %} -->
+<div class="card">
+    <div class="card-body p-5 bg-light">
+      <div class="mx-auto" style="width: 400px;">
 
 {% if form.errors %}
     {{ form.errors }}
@@ -38,5 +37,7 @@
 
 <!-- {# Assumes you setup the password_reset view in your URLconf #}
 <p><a href="{% url 'password_reset' %}">Lost password?</a></p> -->
-
+    </div>
+  </div>
+</div>
 {% endblock %}

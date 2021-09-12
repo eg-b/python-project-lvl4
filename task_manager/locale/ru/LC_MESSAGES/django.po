@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-24 21:08+0300\n"
+"POT-Creation-Date: 2021-09-12 16:11+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,11 +20,11 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: settings.py:126
+#: settings.py:124
 msgid "English"
 msgstr "Английский"
 
-#: settings.py:127
+#: settings.py:125
 msgid "Russian"
 msgstr "Русский"
 
@@ -36,25 +36,25 @@ msgstr "Менеджер задач"
 msgid "Users"
 msgstr "Пользователи"
 
-#: templates/base.html:65
+#: templates/base.html:67
+msgid "Log out"
+msgstr "Вход"
+
+#: templates/base.html:71 templates/index.html:13
 msgid "Log in"
 msgstr "Вход"
 
-#: templates/base.html:68
+#: templates/base.html:74
 msgid "Registration"
 msgstr "Регистрация"
 
-#: templates/index.html:8
-msgid "Yo!"
-msgstr "Привет!"
+#: templates/index.html:10
+msgid "Hi"
+msgstr "Привет"
 
-#: templates/user_create.html:8
-msgid "User creating"
-msgstr "Создание пользователя"
-
-#: templates/user_create.html:17
-msgid "Save"
-msgstr "Сохранить"
+#: templates/index.html:12
+msgid "Hi Guest!"
+msgstr "Привет, гость!"
 
 #: templates/user_delete.html:7
 msgid "Delete user "
@@ -64,31 +64,31 @@ msgstr "Удалить пользователя "
 msgid "Confirm"
 msgstr "Подтвердить"
 
-#: templates/user_list.html:5
+#: templates/user_list.html:7
 msgid "User List"
 msgstr "Пользователи"
 
-#: templates/user_list.html:11
+#: templates/user_list.html:13
 msgid "User ID"
 msgstr "ID пользователя"
 
-#: templates/user_list.html:12
+#: templates/user_list.html:14
 msgid "Username"
 msgstr "Имя пользователя"
 
-#: templates/user_list.html:13
+#: templates/user_list.html:15
 msgid "Actions"
 msgstr "Действия"
 
-#: templates/user_list.html:19
+#: templates/user_list.html:21
 msgid "Edit"
 msgstr "Редактировать"
 
-#: templates/user_list.html:20
+#: templates/user_list.html:22
 msgid "Delete"
 msgstr "Удалить"
 
-#: templates/user_list.html:25
+#: templates/user_list.html:27
 msgid "There are no users."
 msgstr "Нет пользователей"
 
