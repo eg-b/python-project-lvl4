@@ -61,8 +61,10 @@
         <li class="nav-item active">
           <a class="nav-link" href="/users/">{% trans 'Users' %}</a>
         </li>
-
         {% if user.is_authenticated %}
+        <li class="nav-item">
+          <a class="nav-link" href="/">{% trans 'You login as' %} {{ user.username }}</a>
+        </li>
           <li class="nav-item">
             <a class="nav-link" href="/logout/">{% trans 'Log out' %}</a>
           </li>
@@ -83,7 +85,7 @@
   </head>
   <body>
     {% block content %}
-
+      <!-- {% include 'templates/messages.html' %} -->
     {% endblock %}
   </body>
 </html>

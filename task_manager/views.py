@@ -1,3 +1,5 @@
+import logging
+
 from django.shortcuts import render, redirect
 from django.views.generic.base import TemplateView
 from django.views.generic import ListView
@@ -7,33 +9,19 @@ from django.views import View
 from django.utils.translation import gettext as _
 from django.contrib.auth.models import User
 from django.contrib.auth.views import LoginView
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin, PermissionRequiredMixin
 from django.views.generic import View
 from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
-import logging
-# class LoginView(View):
-#     def post(self, request):
-#         username = request.POST['username']
-#         password = request.POST['password']
-#         user = authenticate(username=username, password=password)
+from django.contrib import messages
+from django.contrib.messages.views import SuccessMessageMixin
 
-#         if user is not None:
-#             if user.is_active:
-#                 login(request, user)
-
-#                 return HttpResponseRedirect('/form')
-#             else:
-#                 return HttpResponse("Inactive user.")
-#         else:
-#             return HttpResponseRedirect(settings.LOGIN_URL)
-
-#         return render(request, "index.html")
 
 
 class IndexView(View):
 
     def get(self, request, *args, **kwargs):
-        return HttpResponse('Привет от Хекслета!')
+        return HttpResponse(_('Привет от Хекслета!'))
 
 
 class HomePage(TemplateView):
@@ -57,27 +45,6 @@ class SignUpView(CreateView):
     template_name = 'registration/signup.html'
 
 
-class UpdateUser(UpdateView):
-
-    template_name = "user_update.html"
-    model = User
-    fields = ['username', 'first_name', 'last_name', 'email']
-
-    def get_success_url(self):
-        return "/"
-
-    # нужно как-то обработать ввод неправильного пароля при апдейте
-
-
-class DeleteUser(DeleteView):
-
-    template_name = "user_delete.html"
-    model = User
-
-    def get_success_url(self):
-        return "/users"
-
-
 class Login(LoginView):
 
     template_name = 'registration/login.html'
@@ -88,3 +55,52 @@ class Login(LoginView):
         return context
 
 
+class UpdateUser(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+
+    template_name = "user_update.html"
+    model = User
+    fields = ['username', 'first_name', 'last_name', 'email']
+    
+    @property
+    def obj(self):
+        return self.get_object()
+
+    def get_success_message(self, cleaned_data):
+        return self.success_message % dict(
+            cleaned_data,
+            calculated_field=self.object.calculated_field,
+        )
+    
+    def get_success_url(self):
+        msg = _('was updated succesfully')
+        messages.success(self.request, f'{self.obj.username} {msg}')
+        return "/users"
+
+    def test_func(self):
+        return str(self.request.user) in [self.obj.username, 'admin']
+
+    def handle_no_permission(self):
+        msg = _("You have no permission to do this")
+        messages.error(self.request, f'{msg}')
+        return redirect("/users")
+        
+
+    # нужно как-то обработать ввод неправильного пароля при апдейте
+
+
+class DeleteUser(LoginRequiredMixin, PermissionRequiredMixin, DeleteView):
+
+    template_name = "user_delete.html"
+    model = User
+    permission_required = "auth.delete_user"
+
+    def get_success_url(self):
+        return "/users"
+
+    def test_func(self):
+        obj = self.get_object()
+        return str(self.request.user) in [obj.username, 'admin']
+
+    def handle_no_permission(self):
+        messages.error(self.request, f'{_("You have no permission to do this")}')
+        return redirect("/users")

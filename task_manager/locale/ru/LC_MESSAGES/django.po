@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-12 16:11+0300\n"
+"POT-Creation-Date: 2021-09-19 22:34+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -36,15 +36,19 @@ msgstr "Менеджер задач"
 msgid "Users"
 msgstr "Пользователи"
 
-#: templates/base.html:67
+#: templates/base.html:66
+msgid "You login as"
+msgstr "Вы вошли как"
+
+#: templates/base.html:69
 msgid "Log out"
 msgstr "Вход"
 
-#: templates/base.html:71 templates/index.html:13
+#: templates/base.html:73 templates/index.html:13
 msgid "Log in"
 msgstr "Вход"
 
-#: templates/base.html:74
+#: templates/base.html:76
 msgid "Registration"
 msgstr "Регистрация"
 
@@ -56,42 +60,54 @@ msgstr "Привет"
 msgid "Hi Guest!"
 msgstr "Привет, гость!"
 
-#: templates/user_delete.html:7
+#: templates/user_delete.html:15
 msgid "Delete user "
 msgstr "Удалить пользователя "
 
-#: templates/user_delete.html:10
+#: templates/user_delete.html:18
 msgid "Confirm"
 msgstr "Подтвердить"
 
-#: templates/user_list.html:7
+#: templates/user_list.html:15
 msgid "User List"
 msgstr "Пользователи"
 
-#: templates/user_list.html:13
+#: templates/user_list.html:21
 msgid "User ID"
 msgstr "ID пользователя"
 
-#: templates/user_list.html:14
+#: templates/user_list.html:22
 msgid "Username"
 msgstr "Имя пользователя"
 
-#: templates/user_list.html:15
+#: templates/user_list.html:23
 msgid "Actions"
 msgstr "Действия"
 
-#: templates/user_list.html:21
+#: templates/user_list.html:29
 msgid "Edit"
 msgstr "Редактировать"
 
-#: templates/user_list.html:22
+#: templates/user_list.html:30
 msgid "Delete"
 msgstr "Удалить"
 
-#: templates/user_list.html:27
+#: templates/user_list.html:35
 msgid "There are no users."
 msgstr "Нет пользователей"
 
 #: templates/user_update.html:12
 msgid "Save changes"
 msgstr "Сохранить изменения"
+
+#: views.py:24
+msgid "Привет от Хекслета!"
+msgstr "Hi from Hexlet!"
+
+#: views.py:75
+msgid "was updated succesfully"
+msgstr "обновлен успешно"
+
+#: views.py:83
+msgid "You have no permission to do this"
+msgstr "У вас нет прав для этих действий"
