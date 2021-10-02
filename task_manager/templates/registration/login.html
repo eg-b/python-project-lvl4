@@ -6,7 +6,10 @@
       <div class="mx-auto" style="width: 400px;">
 
 {% if form.errors %}
-    {{ form.errors }}
+<div class="alert alert-info alert-dismissable">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    Incorrect username or password
+  </div>
 {% endif %}
 
 {% if next %}
