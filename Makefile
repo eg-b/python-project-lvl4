@@ -15,7 +15,7 @@ configure:
 	poetry install
 
 lint:
-	poetry run flake8 gendiff
+	poetry run flake8 task_manager
 
 selfcheck:
 	poetry check
@@ -26,10 +26,7 @@ build: check
 	poetry build
 
 test:
-	poetry run pytest --cov=gendiff tests/ --cov-report xml
-
-publish:
-	poetry publish -r testpypi
+	poetry run pytest --cov=task_manager tests/ --cov-report xml
 
 translate:
 	cd task_manager; django-admin makemessages -l ru; django-admin compilemessages
