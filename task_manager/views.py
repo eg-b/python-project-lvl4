@@ -45,14 +45,13 @@ class SignUpView(CreateView):
     success_url = reverse_lazy('login')
     template_name = 'registration/signup.html'
 
+
 class Login(LoginView):
 
     form_class = AuthenticationForm
     template_name = 'registration/login.html'
     redirect_field_name = 'home'
     
-
-
 
 class UpdateUser(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
@@ -92,7 +91,7 @@ class DeleteUser(LoginRequiredMixin, PermissionRequiredMixin, DeleteView):
     template_name = "user_delete.html"
     model = User
     permission_required = "auth.delete_user"
-    # проверить 
+    # Не удаляется аккаунт, нет прав!
 
     def get_success_url(self):
         return "/users"

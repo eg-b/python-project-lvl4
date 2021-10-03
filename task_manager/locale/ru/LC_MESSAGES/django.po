@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-03 19:00+0300\n"
+"POT-Creation-Date: 2021-10-03 22:48+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,27 +28,27 @@ msgstr "Английский"
 msgid "Russian"
 msgstr "Русский"
 
-#: templates/base.html:45
+#: templates/base.html:13
 msgid "Task manager"
 msgstr "Менеджер задач"
 
-#: templates/base.html:58
+#: templates/base.html:26
 msgid "Users"
 msgstr "Пользователи"
 
-#: templates/base.html:62
-msgid "You login as"
-msgstr "Вы вошли как"
+#: templates/base.html:30
+msgid "My profile"
+msgstr "Мой профиль"
 
-#: templates/base.html:65
+#: templates/base.html:33
 msgid "Log out"
 msgstr "Вход"
 
-#: templates/base.html:69 templates/index.html:13
+#: templates/base.html:37 templates/index.html:13
 msgid "Log in"
 msgstr "Вход"
 
-#: templates/base.html:72
+#: templates/base.html:40
 msgid "Registration"
 msgstr "Регистрация"
 
@@ -80,49 +80,75 @@ msgstr "Удалить пользователя "
 msgid "Confirm"
 msgstr "Подтвердить"
 
-#: templates/user_list.html:15
+#: templates/user_list.html:9
 msgid "User List"
 msgstr "Пользователи"
 
-#: templates/user_list.html:21
+#: templates/user_list.html:24
 msgid "User ID"
 msgstr "ID пользователя"
 
-#: templates/user_list.html:22
+#: templates/user_list.html:25
 msgid "Username"
 msgstr "Имя пользователя"
 
-#: templates/user_list.html:23
-msgid "Actions"
-msgstr "Действия"
-
-#: templates/user_list.html:29
-msgid "Edit"
-msgstr "Редактировать"
-
-#: templates/user_list.html:30
-msgid "Delete"
-msgstr "Удалить"
-
-#: templates/user_list.html:35
+#: templates/user_list.html:39
 msgid "There are no users."
 msgstr "Нет пользователей"
 
-#: templates/user_update.html:12
+#: templates/user_update.html:8
+msgid "User profile"
+msgstr "Профиль пользователя"
+
+#: templates/user_update.html:20
 msgid "Save changes"
 msgstr "Сохранить изменения"
+
+#: templates/user_update.html:25 templates/user_update.html:46
+msgid "Delete my account"
+msgstr "Удалить мой аккаунт"
+
+#: templates/user_update.html:31
+#, fuzzy
+#| msgid "Confirm"
+msgid "Confirmation"
+msgstr "Подтвердить"
+
+#: templates/user_update.html:37
+msgid "Are you sure you want to delete your account?"
+msgstr "Вы уверены, что хотите удалить аккаунт?"
+
+#: templates/user_update.html:40
+msgid "Yes"
+msgstr "Да"
+
+#: templates/user_update.html:41
+msgid "No"
+msgstr "Нет"
 
 #: views.py:24
 msgid "Hi!"
 msgstr "Привет!"
 
-#: views.py:74
+#: views.py:73
 msgid "was updated succesfully"
 msgstr "обновлен успешно"
 
-#: views.py:82
+#: views.py:81
 msgid "You have no permission to do this"
 msgstr "У вас нет прав для этих действий"
+
+#~ msgid "You login as"
+#~ msgstr "Вы вошли как"
+
+#~ msgid "Actions"
+#~ msgstr "Действия"
+
+#~ msgid "Edit"
+#~ msgstr "Редактировать"
+
+#~ msgid "Delete"
+#~ msgstr "Удалить"
 
 #~ msgid "Incorrect username or password"
 #~ msgstr "Некорректное имя пользователя или пароль"

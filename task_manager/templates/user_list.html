@@ -6,18 +6,16 @@
 
 <div class="container-fluid">
   <br>
-  <p class="h1" align="Center">{% trans "User List" %}</p></div>
+  <h1 class="display-3" align="Center">{% trans "User List" %}</h1>
   <br>
   <div class="container">
-    <!-- Content here -->
 
         {% if object_list %}
           {% if messages %}
            {% for msg in messages %}
-              <div class="alert alert-info alert-dismissable" align="Center">
-               <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-               {{msg.message}}
-               </div>
+           <div class="alert alert-warning" role="alert" align="Center">
+            {{msg.message}}
+          </div>
             {% endfor %}
           {% endif %}
         <table class="table table-striped">
@@ -25,7 +23,6 @@
               <tr>
                 <th scope="col">{% trans 'User ID' %}</th>
                 <th scope="col">{% trans 'Username' %}</th>
-                <th scope="col">{% trans 'Actions' %}</th>
               </tr>
             </thead>
             <tbody>
@@ -33,8 +30,6 @@
                 {% for user in object_list %}
                 <td>{{ user.id }}</td>
                 <td>{{ user.username }}</td>
-                <td><a class="nav-link" href="/users/{{ user.id }}/update/">{% trans 'Edit' %}</a>
-                    <a class="nav-link" href="/users/{{ user.id }}/delete/">{% trans 'Delete' %}</a></td>
               </tr>
                 {% endfor %}
             </tbody>
