@@ -5,14 +5,6 @@
 {% block content %}
 
 <div class="container-fluid">
-  {% if messages %}
-    {% for msg in messages %}
-      <div class="alert alert-info alert-dismissable">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-        {{msg.message}}
-      </div>
-    {% endfor %}
-  {% endif %}
   <br>
   <p class="h1" align="Center">{% trans "User List" %}</p></div>
   <br>
@@ -20,7 +12,14 @@
     <!-- Content here -->
 
         {% if object_list %}
-
+          {% if messages %}
+           {% for msg in messages %}
+              <div class="alert alert-info alert-dismissable" align="Center">
+               <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+               {{msg.message}}
+               </div>
+            {% endfor %}
+          {% endif %}
         <table class="table table-striped">
           <thead class="thead-dark">
               <tr>
