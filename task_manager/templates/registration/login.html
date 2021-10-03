@@ -1,46 +1,26 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans 'Login' %}{% endblock %}
 
 {% block content %}
 <div class="card">
-    <div class="card-body p-5 bg-light">
-      <div class="mx-auto" style="width: 400px;">
-
-{% if form.errors %}
-<div class="alert alert-info alert-dismissable">
-    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-    Incorrect username or password
-  </div>
-{% endif %}
-
-{% if next %}
-    {% if user.is_authenticated %}
-    <p>Your account doesn't have access to this page. To proceed,
-    please login with an account that has access.</p>
-    {% else %}
-    <p>Please login to see this page.</p>
-    {% endif %}
-{% endif %}
-
-<form method="post" action="{% url 'login' %}">
-{% csrf_token %}
-<table>
-<tr>
-    <td>{{ form.username.label_tag }}</td>
-    <td>{{ form.username }}</td>
-</tr>
-<tr>
-    <td>{{ form.password.label_tag }}</td>
-    <td>{{ form.password }}</td>
-</tr>
-</table>
-
-<input type="submit" value="login">
-<input type="hidden" name="next" value="{{ next }}">
-</form>
-
-<!-- {# Assumes you setup the password_reset view in your URLconf #}
-<p><a href="{% url 'password_reset' %}">Lost password?</a></p> -->
+  <div class="card-body p-5 bg-light">
+    <div class="mx-auto" style="width: 300px;">
+            <form id="login-form" method="post" 
+                  action="{% url 'login' %}">
+                {% csrf_token %}
+                {% include 'includes/bs4_form.html' with form=form %}
+                <input type="submit" class="btn btn-primary pull-right" style="width: 300px;" value={% trans "Login" %}>
+                <input type="hidden" name="next" value="{{ next }}" >
+            </form>
+        </div>
     </div>
   </div>
-</div>
-{% endblock %}
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+{% endblock content %}

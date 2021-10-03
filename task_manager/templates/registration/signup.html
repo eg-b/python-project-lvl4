@@ -1,12 +1,17 @@
 {% extends 'base.html' %}
-
-{% block title %}Sign Up{% endblock %}
+{% load i18n %}
+{% block title %}{% trans 'Sign Up' %}{% endblock %}
 
 {% block content %}
-  <h2>Sign up</h2>
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Sign Up</button>
-  </form>
+<div class="card">
+  <div class="card-body p-5 bg-light">
+    <div class="mx-auto" style="width: 600px;">
+      <form method="post" novalidate>
+        {% csrf_token %}
+        {% include 'includes/bs4_form.html' with form=form %}
+        <button type="submit" class="btn btn-primary" class="mx-auto" style="width: 600px;">{% trans 'Submit' %}</button>
+      </form>
+    </div>
+  </div>
+</div>
 {% endblock %}

@@ -3,7 +3,8 @@
 {% load i18n %}
 
 {% block content %}
-<div class="container">
+
+<div class="container-fluid">
   {% if messages %}
     {% for msg in messages %}
       <div class="alert alert-info alert-dismissable">
@@ -12,29 +13,37 @@
       </div>
     {% endfor %}
   {% endif %}
-  <h3 align=center>{% trans "User List" %}</h3>
-    <div class="row">
-      <div class="col-12">
+  <br>
+  <p class="h1" align="Center">{% trans "User List" %}</p></div>
+  <br>
+  <div class="container">
+    <!-- Content here -->
+
         {% if object_list %}
-          <table cellspacing="3" cellpadding="3" align="center" border="1" width="50%">
-            <tr>
-              <td align=Center>{% trans 'User ID' %}</td>
-              <td align=Center>{% trans 'Username' %}</td>
-              <td align=Center>{% trans 'Actions' %}</td>
-            </tr>
-              {% for user in object_list %}
-                <tr>
-                  <td align=Center>{{ user.id }}</td>
-                  <td align=Center>{{ user.username }}</td>
-                  <td align=Center><a class="nav-link" href="/users/{{ user.id }}/update/">{% trans 'Edit' %}</a>
-                                   <a class="nav-link" href="/users/{{ user.id }}/delete/">{% trans 'Delete' %}</a></td>
-                </tr>
-              {% endfor %}
+
+        <table class="table table-striped">
+          <thead class="thead-dark">
+              <tr>
+                <th scope="col">{% trans 'User ID' %}</th>
+                <th scope="col">{% trans 'Username' %}</th>
+                <th scope="col">{% trans 'Actions' %}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                {% for user in object_list %}
+                <td>{{ user.id }}</td>
+                <td>{{ user.username }}</td>
+                <td><a class="nav-link" href="/users/{{ user.id }}/update/">{% trans 'Edit' %}</a>
+                    <a class="nav-link" href="/users/{{ user.id }}/delete/">{% trans 'Delete' %}</a></td>
+              </tr>
+                {% endfor %}
+            </tbody>
           </table>
+          
         {% else %}
           <p>{% trans 'There are no users.' %}</p>
         {% endif %}
-      </div>
     </div>
 </div>
 {% endblock %}

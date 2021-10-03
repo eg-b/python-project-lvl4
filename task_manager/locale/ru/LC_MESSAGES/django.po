@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-19 22:34+0300\n"
+"POT-Creation-Date: 2021-10-03 19:00+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,45 +20,57 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: settings.py:124
+#: settings.py:125
 msgid "English"
 msgstr "Английский"
 
-#: settings.py:125
+#: settings.py:126
 msgid "Russian"
 msgstr "Русский"
 
-#: templates/base.html:49
+#: templates/base.html:45
 msgid "Task manager"
 msgstr "Менеджер задач"
 
-#: templates/base.html:62
+#: templates/base.html:58
 msgid "Users"
 msgstr "Пользователи"
 
-#: templates/base.html:66
+#: templates/base.html:62
 msgid "You login as"
 msgstr "Вы вошли как"
 
-#: templates/base.html:69
+#: templates/base.html:65
 msgid "Log out"
 msgstr "Вход"
 
-#: templates/base.html:73 templates/index.html:13
+#: templates/base.html:69 templates/index.html:13
 msgid "Log in"
 msgstr "Вход"
 
-#: templates/base.html:76
+#: templates/base.html:72
 msgid "Registration"
 msgstr "Регистрация"
 
 #: templates/index.html:10
-msgid "Hi"
-msgstr "Привет"
+msgid "Hi "
+msgstr "Привет, "
 
 #: templates/index.html:12
 msgid "Hi Guest!"
 msgstr "Привет, гость!"
+
+#: templates/registration/login.html:3 templates/registration/login.html:13
+msgid "Login"
+msgstr "Вход"
+
+#: templates/registration/signup.html:3
+msgid "Sign Up"
+msgstr "Регистрация"
+
+#: templates/registration/signup.html:12
+msgid "Submit"
+msgstr "Отправить"
 
 #: templates/user_delete.html:15
 msgid "Delete user "
@@ -101,13 +113,16 @@ msgid "Save changes"
 msgstr "Сохранить изменения"
 
 #: views.py:24
-msgid "Привет от Хекслета!"
-msgstr "Hi from Hexlet!"
+msgid "Hi!"
+msgstr "Привет!"
 
-#: views.py:75
+#: views.py:74
 msgid "was updated succesfully"
 msgstr "обновлен успешно"
 
-#: views.py:83
+#: views.py:82
 msgid "You have no permission to do this"
 msgstr "У вас нет прав для этих действий"
+
+#~ msgid "Incorrect username or password"
+#~ msgstr "Некорректное имя пользователя или пароль"

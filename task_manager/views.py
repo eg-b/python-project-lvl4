@@ -11,7 +11,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.views import LoginView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin, PermissionRequiredMixin
 from django.views.generic import View
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.urls import reverse_lazy
 from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
@@ -21,7 +21,7 @@ from django.contrib.messages.views import SuccessMessageMixin
 class IndexView(View):
 
     def get(self, request, *args, **kwargs):
-        return HttpResponse(_('Привет от Хекслета!'))
+        return HttpResponse(_('Hi!'))
 
 
 class HomePage(TemplateView):
@@ -40,19 +40,18 @@ class UserList(ListView):
 
 
 class SignUpView(CreateView):
+
     form_class = UserCreationForm
     success_url = reverse_lazy('login')
     template_name = 'registration/signup.html'
 
-
 class Login(LoginView):
 
+    form_class = AuthenticationForm
     template_name = 'registration/login.html'
     redirect_field_name = 'home'
+    
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        return context
 
 
 class UpdateUser(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
@@ -93,6 +92,7 @@ class DeleteUser(LoginRequiredMixin, PermissionRequiredMixin, DeleteView):
     template_name = "user_delete.html"
     model = User
     permission_required = "auth.delete_user"
+    # проверить 
 
     def get_success_url(self):
         return "/users"

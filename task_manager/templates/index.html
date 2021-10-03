@@ -7,9 +7,9 @@
     <div class="mx-auto" style="width: 600px;">
       
       {% if user.is_authenticated %}
-        <div class="display-2" align='center'>{% trans 'Hi' %} {{ user.username }}!</div>
+        <div class="display-3" align='center'>{% trans 'Hi ' %}{{ user.username }}!</div>
       {% else %}
-        <div class="display-2" align='center'>{% trans 'Hi Guest!' %}</div>
+        <div class="display-3" align='center'>{% trans 'Hi Guest!' %}</div>
         <div class="display-4" align='center'><a href="{% url 'login' %}">{% trans 'Log in' %}</a></div>
       {% endif %}
     </div>
